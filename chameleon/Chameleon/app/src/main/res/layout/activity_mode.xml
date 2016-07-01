@@ -13,16 +13,25 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:ignore="UnusedAttribute">
 
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
 
     <com.nhaarman.listviewanimations.itemmanipulation.DynamicListView
         android:id="@+id/activity_dynamiclistview_listview"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="@dimen/paddingTop"
         android:clipToPadding="false"
         android:divider="@null"
         android:paddingBottom="48dp" />
 
-</merge>
+
+</ScrollView>

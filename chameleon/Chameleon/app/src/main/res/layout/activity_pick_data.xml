@@ -20,7 +20,8 @@
     android:layout_height="match_parent"
     android:clipToPadding="false"
     android:fitsSystemWindows="true"
-    tools:ignore="UnusedAttribute">
+    tools:ignore="UnusedAttribute"
+    android:fillViewport="false">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,22 +44,26 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
                 android:scaleType="center"
-                android:src="@drawable/img_manipulation_swipetodismiss" />
+                android:src="@drawable/background" />
 
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/green_transparent"
                 android:padding="12dp">
-
+                <fragment
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    class="com.google.android.gms.maps.SupportMapFragment"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:fontFamily="sans-serif-condensed"
-                    android:text="@string/dynamiclistview"
+                    android:text="current location"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </FrameLayout>
         </FrameLayout>
@@ -75,22 +80,53 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
                 android:scaleType="center"
-                android:src="@drawable/img_manipulation_expand" />
+                android:src="@drawable/background2" />
 
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/red_transparent"
                 android:padding="12dp">
 
-                <TextView
+                <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:fontFamily="sans-serif-condensed"
-                    android:text="@string/expandablelistitemadapter"
-                    android:textColor="@android:color/white"
-                    android:textSize="20sp" />
+                    android:text="vibrate"
+                    android:layout_marginBottom="30dp"
+                    android:id="@+id/checkBoxVibrate"
+                    android:checked="true"/>
+
+                <Button
+                    android:id="@+id/timeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Time"
+                    android:layout_gravity="left|bottom" />
+
+                <Button
+                    android:id="@+id/dateButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Select Date"
+                    android:layout_gravity="left|center_vertical" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="close on single tap minute"
+                    android:layout_marginBottom="30dp"
+                    android:id="@+id/checkBoxCloseOnSingleTapMinute"
+                    android:checked="true"
+                    android:layout_gravity="right|bottom" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="close on single tap day"
+                    android:layout_marginBottom="30dp"
+                    android:id="@+id/checkBoxCloseOnSingleTapDay"
+                    android:checked="true"
+                    android:layout_gravity="right|center_vertical" />
 
             </FrameLayout>
         </FrameLayout>
