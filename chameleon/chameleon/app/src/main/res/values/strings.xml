@@ -16,7 +16,7 @@
 
 <resources>
 
-    <string name="app_name">ListViewAnimations</string>
+    <string name="app_name">Chameleon</string>
     <string name="menu_donate">Buy me a beer!</string>
     <string name="menu_beer">Buy me a beer!</string>
     <string name="menu_beer2">Buy me 2 beers!</string>
@@ -48,6 +48,6 @@
     <string name="tap_to_insert">Tap on an item to insert a new item</string>
     <string name="newly_added_item">This is newly added item %d</string>
 
-    <string name="activity_dynamiclistview_header">Touch the grip or long press an item to drag.\nSwipe to dismiss.\nTap an item to insert a new item.</string>
+    <string name="activity_dynamiclistview_header">Touch the grip or long press an item to drag.\nSwipe to dismiss.\nTap an item to insert a new item</string>
 
 </resources>
