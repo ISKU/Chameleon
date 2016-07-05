@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class EachSaveListView extends LinearLayout{
     TextView listName;
-    TextView weekName;
+    //TextView weekName;
     TextView startName;
     TextView stopName;
     ImageView wifiFunction;
@@ -35,7 +35,7 @@ public class EachSaveListView extends LinearLayout{
         listInflater.inflate(R.layout.each_menu_list,this,true);
 
         listName = (TextView) findViewById(R.id.listName);
-        weekName= (TextView) findViewById(R.id.weekName);
+        //weekName= (TextView) findViewById(R.id.weekName);
         startName= (TextView) findViewById(R.id.startName);
         stopName= (TextView) findViewById(R.id.stopName);
 
@@ -49,16 +49,20 @@ public class EachSaveListView extends LinearLayout{
     }
 
     public void setListNameText(String text){
-        listName.setText(text);
+        listName.setText("  "+text);
     }
-    public void setWeekNameText(String text){
-        weekName.setText(text);
-    }
-    public void setStartNameText(String text){
-        startName.setText(text);
+   /* public void setWeekNameText(String text){
+        weekName.setText("    "+text+" : ");
+    }*/
+    public void setStartNameText(String text, String week){
+        int hour = Integer.parseInt(text) /3600;
+        int min = Integer.parseInt(text) /60 - hour*60;
+        startName.setText(hour+"시"+ min + "분 / " +week);
     }
     public void setStopNameText(String text){
-        stopName.setText(text);
+        int hour = Integer.parseInt(text) /3600;
+        int min = Integer.parseInt(text) /60 - hour*60;
+        stopName.setText(" ~ "+hour+"시" +min+"분");
     }
     public void setWifiFunction(int text){
         if(text==1)
@@ -69,8 +73,10 @@ public class EachSaveListView extends LinearLayout{
     public void setSoundFunction(int text){
         if(text==1) {
             soundFunction.setImageResource(R.drawable.sound_function);
+        }else if(text==0){
+            soundFunction.setImageResource(R.drawable.mute_function);
         }else{
-            soundFunction.setImageResource(R.drawable.sound_function_off);
+            soundFunction.setImageResource(R.drawable.vibration_function);
         }
     }
     public void setNetworkFunction(int text){
@@ -98,7 +104,6 @@ public class EachSaveListView extends LinearLayout{
             airplaneFunction.setImageResource(R.drawable.airplane_function_off);
     }
     public void setToggle(final Context context, final int position, final ArrayList<Info> save_menu) {
-
         if(save.get(position).getToggle() == 1)
             toggle_save.setChecked(true);
         else
