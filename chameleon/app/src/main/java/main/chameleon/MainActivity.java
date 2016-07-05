@@ -39,11 +39,13 @@ public class MainActivity extends Activity {
         save_menu = new ArrayList<Info>();
         scrollView = (ScrollView) findViewById(R.id.scroll_view);
         listView = (ListView) findViewById(R.id.showModeListView);
-        save_menu.add(new Info(1, "서영학", 1, 1, 0, 1, 0, 1, weekList[1], 32, 32, 1234, 123, 1));
-        save_menu.add(new Info(1, "서영학", 0, 1, 0, 0, 0, 1, weekList[3], 32, 32, 1234, 123, 1));
-        save_menu.add(new Info(1, "서영학", 1, 1, 1, 1, 1, 1, weekList[3], 32, 32, 1234, 123, 1));
-        save_menu.add(new Info(1, "서영학", 1, 1, 1, 1, 1, 1, weekList[3], 32, 32, 1234, 123, 1));
-        save_menu.add(new Info(1, "서영학", 0, 0, 0, 0, 0, 0, weekList[3], 32, 32, 1234, 123, 1));
+        save_menu.add(new Info(1, "서영학 김민호", 1, 34444, 77777, 1, 0, 1, 1, 1, 1, 1234, 123, 1));
+        save_menu.add(new Info(1, "공대 5호관", 1, 33244, 77777, 1, 1, 0, 1, 1, 1, 1234, 123, 1));
+        save_menu.add(new Info(1, "서영학 김민호", 1, 11144, 77731, 5, 0, 1, 1, 1, 1, 1234, 123, 1));
+        save_menu.add(new Info(1, "서영학 김민호", 1, 44444, 77722, 1, 0, 1, 1, 1, 1, 1234, 123, 1));
+        save_menu.add(new Info(1, "서영학 김민호", 1, 22, 44777, 1, 0, 1, 1, 1, 1, 1234, 123, 1));
+
+//public Info(int id, String name, int week, int starttime, int stoptime, int wifi, int sound, int brightness, int lte, int bluetooth, int airplane, double latitude, double longitude, int toggle) {
 
         listView.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -52,7 +54,8 @@ public class MainActivity extends Activity {
                 return false;
             }
         });
-
+        View header = getLayoutInflater().inflate(R.layout.each_list_header,null,false);
+        listView.addHeaderView(header);
         myAdapter adapter = new myAdapter();
         listView.setAdapter(adapter);
 
@@ -66,7 +69,7 @@ public class MainActivity extends Activity {
         });
 
 
-        toModeListButton = (Button) findViewById(R.id.toModeListButton);
+        toModeListButton = (Button) findViewById(R.id.listToSettingButton);
         toModeListButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 aIntent = new Intent(MainActivity.this, ModeActivity.class);
@@ -97,8 +100,8 @@ public class MainActivity extends Activity {
         public View getView(int position, View convertView, ViewGroup parent) {
             EachSaveListView view = new EachSaveListView(getApplicationContext());
             view.setListNameText(save_menu.get(position).getName());
-            view.setWeekNameText(save_menu.get(position).getWeek());
-            view.setStartNameText(save_menu.get(position).getStarttime() + "");
+
+            view.setStartNameText(save_menu.get(position).getStarttime() + "",weekList[save_menu.get(position).getWeek()]);
             view.setStopNameText(save_menu.get(position).getStoptime() + "");
 
             view.setBrightFunction(save_menu.get(position).getBrightness());
