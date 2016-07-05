@@ -4,38 +4,27 @@
     android:layout_height="wrap_content"
     android:scrollbars="none"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scroll_view">
+    android:id="@+id/scroll_view"
+    android:background="#CCFF99"
+
+    >
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/ModeTitle"
-        android:text="카멜레온 저장된 리스트"
-        android:textSize="30sp"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp" />
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5dp"
+    >
 
     <ListView
+
+        android:background="@drawable/shape"
         android:layout_width="match_parent"
-        android:layout_height="330dp"
+        android:layout_height="400dp"
         android:layout_below="@+id/ModeTitle"
-        android:layout_above = "@+id/showModeListView"
         android:layout_margin="20dp"
         android:id="@+id/showModeListView"
-        android:layout_marginBottom="5dp">
+        >
     </ListView>
-
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:id="@+id/toModeListButton"
-        android:onClick="onClick" />
 
 
     <Button
@@ -43,7 +32,7 @@
         android:layout_height="45dp"
         android:layout_below="@+id/showModeListView"
         android:layout_margin="10dp"
-
+        android:onClick="onClick"
         android:id="@+id/listToSettingButton"
         android:text="설정 "
         android:layout_gravity="right">

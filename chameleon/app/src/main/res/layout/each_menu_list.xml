@@ -1,141 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:background="@drawable/shape"
+    android:layout_height="match_parent"
+    >
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="105dp"
         android:background="#ffffff"
-        >
+       >
+
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="horizontal" android:layout_width="match_parent"
-            android:layout_height="90dp">
+            android:layout_height="55dp">
+            <TextView
+                android:layout_width="5dp"
+                android:layout_height="30dp"
+                android:id="@+id/blank1"
+                android:contentDescription="" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:textSize="20dp"
+                android:id="@+id/listName"
+                android:layout_gravity="left"
+                android:textColor = "#405B79"
+                android:text="이름" />
 
-
-
+            <ToggleButton
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="28dp"
+                android:layout_gravity="center"
+                android:textOn=""
+                android:textOff=""
+                android:layout_height="45dp"
+                android:id="@+id/toggle_save"
+                android:background="@drawable/toggle_selector"/>
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="vertical" android:layout_width="90dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_weight="0.5"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/listTitle"
-                    android:text="이름" />
-
+                android:orientation="vertical" android:layout_width="77dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/weekTitle"
-                    android:text="요일"  />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/startTitle"
-                    android:text="시작시간"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/stopTitle"
-                    android:text="      종료시간"
-                    />
-            </LinearLayout>
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="vertical" android:layout_width="140dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_weight="0.5"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/listName"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/weekName"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:text="12시 30분 / 금"
+                    android:textColor = "#405B79"
                     android:id="@+id/startName"
-
                     />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:text=" ~ 15시 30분"
+                    android:textColor = "#405B79"
                     android:id="@+id/stopName"
-
                     />
             </LinearLayout>
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="horizontal" android:layout_width="40dp"
-                android:layout_height="90dp"
-                android:gravity="center">
-                <ToggleButton
-                    android:layout_width="50dp"
-                    android:layout_weight=".15"
-                    android:layout_height="35dp"
-                    android:id="@+id/toggle_save"
-                    android:background="@drawable/toggle_selector"
-                    android:contentDescription="" />
+
+
             </LinearLayout>
-        </LinearLayout>
+
 
         <!-- 기능 -->
-
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
             android:layout_height="40dp"
             >
-            <ImageView
-                android:layout_width="35dp"
+            <TextView
+                android:layout_width="5dp"
                 android:layout_weight=".15"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
+                android:id="@+id/function"
+                android:contentDescription="" />
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_weight=".15"
+                android:layout_height="25dp"
                 android:id="@+id/wifi_function"
                 android:src="@drawable/wifi_function_off"
                 android:contentDescription="" />
             <ImageView
-                android:layout_width="35dp"
+                android:layout_width="25dp"
                 android:layout_weight=".15"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
                 android:id="@+id/sound_function"
                 android:src="@drawable/sound_function_off"
                 android:contentDescription="" />
             <ImageView
-                android:layout_width="35dp"
+                android:layout_width="25dp"
                 android:layout_weight=".15"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
                 android:id="@+id/network_function"
                 android:src="@drawable/network_function_off"
                 android:contentDescription="" />
             <ImageView
-                android:layout_width="35dp"
+                android:layout_width="25dp"
                 android:layout_weight=".15"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
                 android:id="@+id/bright_function"
                 android:src="@drawable/bright_function_off"
                 android:contentDescription="" />
             <ImageView
-                android:layout_width="35dp"
+                android:layout_width="25dp"
                 android:layout_weight=".15"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
                 android:id="@+id/bluetooth_function"
                 android:src="@drawable/bluetooth_function_off"
                 android:contentDescription="" />
             <ImageView
-                android:layout_width="35dp"
+                android:layout_width="25dp"
                 android:layout_weight=".15"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
                 android:id="@+id/airplane_function"
                 android:src="@drawable/airplane_function_off"
                 android:contentDescription="" />
