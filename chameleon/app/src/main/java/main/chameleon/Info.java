@@ -1,42 +1,41 @@
 package main.chameleon;
 
 /**
- * Created by SeoYoungHak on 2016-06-26.
+ * Created by KMH on 2016-07-05.
  */
 public class Info {
     private int id;
     private String name;
+    private int week;
+    private int starttime;
+    private int stoptime;
+    private int wifi;
     private int sound;
     private int brightness;
-    private int wifi;
     private int lte;
     private int bluetooth;
     private int airplane;
-    private String week;
     private double latitude;
     private double longitude;
-    private long starttime;
-    private long stoptime;
     private int toggle;
-    private int gpsinterval;
-    private int timeinterval;
 
-    public Info(int id, String name, int sound, int brightness, int wifi, int lte, int bluetooth, int airplane, String week, double latitude, double longitude, long starttime, long stoptime, int toggle) {
+    public Info(int id, String name, int week, int starttime, int stoptime, int wifi, int sound, int brightness, int lte, int bluetooth, int airplane, double latitude, double longitude, int toggle) {
         this.id = id;
         this.name = name;
+        this.week = week;
+        this.starttime = starttime;
+        this.stoptime= stoptime;
+        this.wifi = wifi;
         this.sound = sound;
         this.brightness = brightness;
-        this.wifi = wifi;
         this.lte = lte;
         this.bluetooth = bluetooth;
         this.airplane = airplane;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.starttime = starttime;
-        this.stoptime= stoptime;
         this.toggle = toggle;
-        this.week = week;
     }
+
     public int getId() {
         return id;
     }
@@ -51,9 +50,33 @@ public class Info {
         this.name = name;
     }
 
-    public String getWeek(){return week; }
-    public void setWeek(String week){this.week=week;}
+    public int getWeek() {
+        return week;
+    }
+    public void setWeek(int week) {
+        this.week = week;
+    }
 
+    public int getStarttime() {
+        return starttime;
+    }
+    public void setStarttime(int starttime) {
+        this.starttime = starttime;
+    }
+
+    public int getStoptime() {
+        return stoptime;
+    }
+    public void setStoptime(int stoptime) {
+        this.stoptime = stoptime;
+    }
+
+    public int getWifi() {
+        return wifi;
+    }
+    public void setWifi(int wifi) {
+        this.wifi = wifi;
+    }
 
     public int getSound() {
         return sound;
@@ -67,13 +90,6 @@ public class Info {
     }
     public void setBrightness(int brightness) {
         this.brightness = brightness;
-    }
-
-    public int getWifi() {
-        return wifi;
-    }
-    public void setWifi(int wifi) {
-        this.wifi = wifi;
     }
 
     public int getLte() {
@@ -109,39 +125,11 @@ public class Info {
         this.longitude =longitude;
     }
 
-    public long getStarttime() {
-        return starttime;
-    }
-    public void setStarttime(long starttime) {
-        this.starttime = starttime;
-    }
-
-    public long getStoptime() {
-        return stoptime;
-    }
-    public void setStoptime(long stoptime) {
-        this.stoptime = stoptime;
-    }
-
     public int getToggle() {
         return toggle;
     }
     public void setToggle(int toggle) {
         this.toggle = toggle;
-    }
-
-    public int getGpsinterval() {
-        return gpsinterval;
-    }
-    public void setGpsinterval(int gpsinterval) {
-        this.gpsinterval = gpsinterval;
-    }
-
-    public int getTimeinterval() {
-        return timeinterval;
-    }
-    public void setTimeinterval(int timeinterval) {
-        this.timeinterval = timeinterval;
     }
 
     public String toString() {
