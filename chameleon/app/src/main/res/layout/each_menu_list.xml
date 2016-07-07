@@ -6,19 +6,20 @@
     android:layout_height="match_parent"
     android:paddingTop="0dp">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:background="#ffffff"
         android:layout_marginTop="10dp"
         >
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="horizontal" android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
             android:paddingTop="0dp"
-            android:layout_marginTop="0dp">
+            android:layout_marginTop="0dp"
+            android:id="@+id/linearLayout2">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -27,30 +28,16 @@
                 android:textSize="20dp"
                 android:id="@+id/listName"
                 android:textColor = "#405B79"
-                android:text="이름" />
+                android:text="이름"
+                android:typeface="serif" />
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:orientation="vertical" android:layout_width="77dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_marginTop="0dp"
 
                 android:gravity="top">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12dp"
-                    android:text="12시 30분 / 금"
-                    android:textColor = "#405B79"
-                    android:id="@+id/startName"
-                    android:gravity="top" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12dp"
-                    android:text=" ~ 15시 30분"
-                    android:textColor = "#405B79"
-                    android:id="@+id/stopName"
-                    />
+
             </LinearLayout>
 
             <com.kyleduo.switchbutton.SwitchButton
@@ -67,11 +54,40 @@
 
 
         <!-- 기능 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:text="12시 30분 / 금"
+            android:textColor = "#405B79"
+            android:id="@+id/startName"
+            android:gravity="top"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:typeface="serif" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:text=" ~ 15시 30분"
+            android:textColor = "#405B79"
+            android:id="@+id/stopName"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignTop="@+id/startName"
+            android:layout_toRightOf="@+id/startName"
+            android:layout_toEndOf="@+id/startName"
+            android:typeface="serif" />
+
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="horizontal" android:layout_width="match_parent"
-            android:layout_marginTop="15dp"
             android:layout_height="40dp"
-            >
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayout">
             <TextView
                 android:layout_width="5dp"
                 android:layout_height="25dp"
@@ -121,13 +137,12 @@
                 android:contentDescription="" />
         </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
-        android:layout_gravity="center_horizontal"
         android:background="@drawable/line" />
 
 </LinearLayout>

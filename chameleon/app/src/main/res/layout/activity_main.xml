@@ -13,21 +13,23 @@
     android:layout_height="550dp"
     android:layout_marginBottom="5dp"
 
-    >
+    android:padding="5dp"
+    android:background="#405B79">
 
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="450dp"
+        android:layout_height="600dp"
         android:id="@+id/showModeListView"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#fff">
+        android:background="@drawable/shape"
+        android:layout_alignParentBottom="true">
     </ListView>
 
-    <Button
+   <!-- <Button
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:id="@+id/listToSettingButton"
@@ -48,7 +50,7 @@
         android:layout_below="@+id/showModeListView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
-    </Button>
+    </Button>-->
 
 
 </RelativeLayout>
