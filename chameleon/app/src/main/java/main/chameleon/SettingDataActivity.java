@@ -23,6 +23,7 @@ public class SettingDataActivity extends FragmentActivity implements DatePickerD
 
     public static final String DATEPICKER_TAG = "datepicker";
     public static final String TIMEPICKER_TAG = "timepicker";
+    public static float temp = 0;
 
 
     @TargetApi(21)
@@ -30,22 +31,32 @@ public class SettingDataActivity extends FragmentActivity implements DatePickerD
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_data);
         final ToggleExpandLayout layout = (ToggleExpandLayout) findViewById(R.id.toogleLayout);
+        final ToggleExpandLayout layout2 = (ToggleExpandLayout) findViewById(R.id.toogleLayout2);
         SwitchButton switchButton = (SwitchButton) findViewById(R.id.switch_button);
+        SwitchButton switchButton2 = (SwitchButton) findViewById(R.id.switch_button2);
 
         layout.setOnToggleTouchListener(new ToggleExpandLayout.OnToggleTouchListener() {
 
             @Override
             public void onStartOpen() {
+
             }
 
             @Override
             public void onOpen() {
+                ToggleExpandLayout t1 = (ToggleExpandLayout) findViewById(R.id.toogleLayout);
+                ToggleExpandLayout t2 = (ToggleExpandLayout) findViewById(R.id.toogleLayout2);
+                temp = (t2.getY() - t1.getY())*4;
+                t2.setY( t2.getY() + temp);
             }
             @Override
             public void onStartClose() {
             }
             @Override
             public void onClosed() {
+                ToggleExpandLayout t1 = (ToggleExpandLayout) findViewById(R.id.toogleLayout);
+                ToggleExpandLayout t2 = (ToggleExpandLayout) findViewById(R.id.toogleLayout2);
+                t2.setY( t2.getY() - temp );
             }
         });
 
@@ -59,6 +70,38 @@ public class SettingDataActivity extends FragmentActivity implements DatePickerD
                 }
             }
         });
+
+
+        layout2.setOnToggleTouchListener(new ToggleExpandLayout.OnToggleTouchListener() {
+
+            @Override
+            public void onStartOpen() {
+
+            }
+
+            @Override
+            public void onOpen() {
+            }
+            @Override
+            public void onStartClose() {
+            }
+            @Override
+            public void onClosed() {
+
+            }
+        });
+
+        switchButton2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    layout2.open();
+                } else {
+                    layout2.close();
+                }
+            }
+        });
+
 
 
         final Calendar calendar = Calendar.getInstance();
