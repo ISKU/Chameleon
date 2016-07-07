@@ -7,7 +7,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -62,24 +61,25 @@ public class MainActivity extends Activity {
         myAdapter adapter = new myAdapter();
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.putExtra("position_save", position);
-                startActivity(intent);
-            }
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                intent.putExtra("position_save", position);
+//                startActivity(intent);
+//            }
+//        });
 
 
-        toModeListButton = (Button) findViewById(R.id.listToSettingButton);
+        /*
+       toModeListButton = (Button) findViewById(R.id.listToSettingButton);
         toModeListButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 aIntent = new Intent(MainActivity.this, ModeActivity.class);
                 startActivity(aIntent);
             }
         });
-
+        */
 
     }
 
