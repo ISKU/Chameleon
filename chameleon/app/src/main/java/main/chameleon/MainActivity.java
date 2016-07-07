@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -34,8 +35,9 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
+        startActivity(new Intent(this, main.chameleon.SplashActivity.class));
         save_menu = new ArrayList<Info>();
         scrollView = (ScrollView) findViewById(R.id.scroll_view);
         listView = (ListView) findViewById(R.id.showModeListView);
