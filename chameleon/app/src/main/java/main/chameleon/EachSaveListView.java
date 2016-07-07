@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 
@@ -25,9 +24,9 @@ public class EachSaveListView extends LinearLayout{
     ImageView brightFunction;
     ImageView bluetoothFunction;
     ImageView airplaneFunction;
-    ToggleButton toggle_selector;
+    com.kyleduo.switchbutton.SwitchButton toggle_selector;
     ArrayList<Info> save;
-    ToggleButton toggle_save;
+    com.kyleduo.switchbutton.SwitchButton toggle_save;
 
     public EachSaveListView(Context context) {
         super(context);
@@ -45,7 +44,7 @@ public class EachSaveListView extends LinearLayout{
         brightFunction= (ImageView)findViewById(R.id.bright_function);
         bluetoothFunction= (ImageView)findViewById(R.id.bluetooth_function);
         airplaneFunction= (ImageView)findViewById(R.id.airplane_function);
-        toggle_selector= (ToggleButton)findViewById(R.id.toggle_save);
+        toggle_selector= (com.kyleduo.switchbutton.SwitchButton)findViewById(R.id.toggle_save);
     }
 
     public void setListNameText(String text){
