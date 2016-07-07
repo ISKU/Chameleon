@@ -17,7 +17,7 @@
 
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="500dp"
+        android:layout_height="450dp"
         android:id="@+id/showModeListView"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"

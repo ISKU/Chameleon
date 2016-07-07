@@ -21,7 +21,7 @@
     android:clipToPadding="false"
     android:fitsSystemWindows="true"
     tools:ignore="UnusedAttribute"
-    android:background="#aebec5"
+    android:background="#fff"
     android:fillViewport="false">
 
     <LinearLayout
@@ -35,32 +35,31 @@
         android:weightSum="1">
 
         <FrameLayout
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="280dp"
-            android:layout_marginBottom="0dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:onClick="onDynamicListViewClicked"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
             android:layout_gravity="top|left"
-            android:layout_margin="10dp"
-            android:background="#fff">
+            android:padding="5dp">
 
             <FrameLayout
                 android:layout_width="fill_parent"
-                android:layout_height="235dp"
+                android:layout_height="220dp"
                 android:padding="0dp"
                 android:layout_gravity="center_horizontal|top"
                 android:layout_margin="0dp">
 
                 <fragment
                     android:id="@+id/map"
-                    android:layout_width="match_parent"
+                    android:layout_width="370dp"
                     android:layout_height="match_parent"
                     class="com.google.android.gms.maps.SupportMapFragment"
                     android:layout_gravity="center_horizontal|top"
-                    android:layout_marginTop="0dp" />
+                    android:layout_marginTop="0dp"
+                    android:layout_margin="0dp" />
 
             </FrameLayout>
 
@@ -72,37 +71,48 @@
                 android:layout_height="0dp"
                 android:padding="15dp"
                 android:layout_gravity="right|bottom"
-                android:paddingBottom="16dp" />
+                android:paddingBottom="16dp"
+                android:layout_marginTop="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|bottom"
                 android:text="current location"
-                android:textColor="#000"
+                android:textColor="#405B79"
                 android:textSize="18sp"
                 android:textStyle="normal"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
-                android:typeface="serif" />
+                android:typeface="serif"
+                android:layout_marginTop="5dp"
+                android:layout_margin="5dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView9"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/line" />
 
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp">
 
             <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="700dp"
-                android:background="#aebec5"
+                android:layout_height="600dp"
+                android:background="#fff"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:layout_weight="17.50"
-                android:layout_gravity="center_horizontal|bottom">
+                android:layout_gravity="center_horizontal|bottom"
+                android:padding="5dp">
 
                 <com.fenjuly.mylibrary.ToggleExpandLayout
                     android:id="@+id/toogleLayout"
@@ -134,7 +144,7 @@
                                 android:layout_marginLeft="8dp"
                                 android:text="Set date"
                                 android:textSize="18dp"
-                                android:textColor="#000"
+                                android:textColor="#405B79"
                                 android:typeface="serif" />
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -150,11 +160,12 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageView4"
+                                android:id="@+id/imageView2"
                                 android:background="@drawable/line"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
-                                android:layout_alignParentEnd="true" />
+                                android:layout_alignParentEnd="true"
+                                android:focusable="false" />
                         </RelativeLayout>
 
                     </LinearLayout>
@@ -181,7 +192,7 @@
                                 android:layout_marginTop="8dp"
                                 android:layout_marginLeft="8dp"
                                 android:text="Set time"
-                                android:textColor="#000"
+                                android:textColor="#405B79"
                                 android:textSize="18dp"
                                 android:typeface="serif" />
                             <ImageView
@@ -196,11 +207,11 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageView5"
                                 android:background="@drawable/line"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
-                                android:layout_alignParentEnd="true" />
+                                android:layout_alignParentEnd="true"
+                                android:id="@+id/ImageView3" />
                         </RelativeLayout>
 
                     </LinearLayout>
@@ -215,7 +226,7 @@
                         android:gravity="center">
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             >
                             <TextView
                                 android:id="@+id/menu"
@@ -224,7 +235,7 @@
                                 android:layout_marginTop="8dp"
                                 android:layout_marginLeft="8dp"
                                 android:text="Select date and time"
-                                android:textColor="#000"
+                                android:textColor="#405B79"
                                 android:textSize="18dp"
                                 android:typeface="serif" />
                             <TextView
@@ -247,18 +258,238 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/imageView4"
+                                android:background="@drawable/line"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView10"
+                                android:background="@drawable/line"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView7"
+                                android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
+                                android:layout_above="@+id/imageView4"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </com.fenjuly.mylibrary.ToggleExpandLayout>
+
+                <com.fenjuly.mylibrary.ToggleExpandLayout
+                    android:id="@+id/toogleLayout2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="360dp"
+                    android:paddingTop="0dp"
+                    android:padding="0dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="40dp">
+
+                    <LinearLayout
+                        android:id="@+id/id5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:background="#ffffff"
+                        android:elevation="2dp"
+                        android:outlineProvider="bounds"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/wifiList"
+                            android:onClick="selectDate"
+                            android:clickable="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="8dp"
+                                android:text="Set wifi"
+                                android:textSize="18dp"
+                                android:textColor="#405B79"
+                                android:typeface="serif" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/next"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentLeft="false"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="20dp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView5"
+                                android:background="@drawable/line"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id6"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:background="#ffffff"
+                        android:elevation="3dp"
+                        android:outlineProvider="bounds"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/vibrateList"
+                            android:nestedScrollingEnabled="false"
+                            android:clickable="true">
+                            <TextView
+                                android:id="@+id/second_menu2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:text="Set vibrate"
+                                android:textColor="#405B79"
+                                android:textSize="18dp"
+                                android:typeface="serif" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/next"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="10dp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:id="@+id/imageView6"
                                 android:background="@drawable/line"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentRight="true"
                                 android:layout_alignParentEnd="true" />
                         </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id8"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:background="#ffffff"
+                        android:elevation="3dp"
+                        android:outlineProvider="bounds"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/bluetoothList"
+                            android:nestedScrollingEnabled="false"
+                            android:clickable="true">
+                            <TextView
+                                android:id="@+id/second_menu3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:text="Set bluetooth"
+                                android:textColor="#405B79"
+                                android:textSize="18dp"
+                                android:typeface="serif" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/next"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="10dp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView8"
+                                android:background="@drawable/line"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/id7"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:background="#ffffff"
+                        android:elevation="4dp"
+                        android:outlineProvider="bounds">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            >
+                            <TextView
+                                android:id="@+id/menu2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:text="Select statement"
+                                android:textColor="#405B79"
+                                android:textSize="18dp"
+                                android:typeface="serif" />
+                            <TextView
+                                android:layout_below="@+id/menu2"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Choose statement"
+                                android:textColor="#cccccc"
+                                android:typeface="serif" />
+                            <com.kyleduo.switchbutton.SwitchButton
+                                android:id="@+id/switch_button2"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="15dp"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView11"
+                                android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
+                        </RelativeLayout>
                     </LinearLayout>
                 </com.fenjuly.mylibrary.ToggleExpandLayout>
 
-
             </RelativeLayout>
+
         </FrameLayout>
+
         <!--<FrameLayout
             android:layout_width="match_parent"
             android:layout_height="250dp"
