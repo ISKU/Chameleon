@@ -55,4 +55,9 @@
     <color name="done_text_color_dark_disabled">#888888</color>
     <color name="done_disabled_dark">#bfbfbf</color>
 
+    <color name="background_color">#aebec5</color>
+
+    <color name="indigo">#4B0082</color>
+    <color name="pink">#FFC0CB</color>
+
 </resources>

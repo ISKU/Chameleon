@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -34,6 +35,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        startActivity(new Intent(this,SplashActivity.class));
         setContentView(R.layout.activity_main);
 
         save_menu = new ArrayList<Info>();
@@ -116,4 +119,12 @@ public class MainActivity extends Activity {
 
         }
     }
+
+    public void moveListSetting(View v){
+        if(v.getId() == R.id.listToSettingButton){
+            Intent intent_setListWindow = new Intent(this, SettingDataActivity.class);
+            startActivity(intent_setListWindow);
+        }
+    }
+
 }
