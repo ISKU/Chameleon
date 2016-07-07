@@ -116,4 +116,12 @@ public class MainActivity extends Activity {
 
         }
     }
+
+    public void moveListSetting(View v){
+        if(v.getId() == R.id.listToSettingButton){
+            Intent intent_setListWindow = new Intent(this, SettingDataActivity.class);
+            startActivity(intent_setListWindow);
+        }
+    }
+
 }
