@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="ToggleExpandLayout-774e497692">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.fenjuly/ToggleExpandLayout/774e497692/res" />
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.fenjuly/ToggleExpandLayout/774e497692/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.fenjuly/ToggleExpandLayout/774e497692/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
