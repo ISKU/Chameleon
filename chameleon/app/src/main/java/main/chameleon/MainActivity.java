@@ -38,6 +38,9 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this,SplashActivity.class));
         setContentView(R.layout.activity_main);
 
+
+
+
         save_menu = new ArrayList<Info>();
         scrollView = (ScrollView) findViewById(R.id.scroll_view);
         listView = (ListView) findViewById(R.id.showModeListView);

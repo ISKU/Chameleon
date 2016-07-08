@@ -28,8 +28,7 @@
                 android:textSize="20dp"
                 android:id="@+id/listName"
                 android:textColor = "#405B79"
-                android:text="이름"
-                android:typeface="serif" />
+                android:text="이름" />
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:orientation="vertical" android:layout_width="77dp"
@@ -65,8 +64,7 @@
             android:layout_below="@+id/linearLayout2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="20dp"
-            android:typeface="serif" />
+            android:layout_marginLeft="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -78,8 +76,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_alignTop="@+id/startName"
             android:layout_toRightOf="@+id/startName"
-            android:layout_toEndOf="@+id/startName"
-            android:typeface="serif" />
+            android:layout_toEndOf="@+id/startName" />
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="horizontal" android:layout_width="match_parent"

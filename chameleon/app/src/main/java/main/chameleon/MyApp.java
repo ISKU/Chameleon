@@ -9,7 +9,7 @@ public class MyApp extends Application {
 
     @Override
     public void onCreate() {
-        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "JejuMyeongjo.ttf");
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "Cabin-Regular-TTF.ttf");
         // font from assets: "assets/fonts/Roboto-Regular.ttf
     }
 }
