@@ -20,7 +20,11 @@ import java.util.Calendar;
  */
 public class SettingDataActivity extends FragmentActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
-
+    private GoogleMap map;
+    private LocationManager manager;
+    private GPSListener gpsListener;
+    private double latitude;
+    private double longitude;
     public static final String DATEPICKER_TAG = "datepicker";
     public static final String TIMEPICKER_TAG = "timepicker";
     public static float temp = 0;
@@ -166,5 +170,65 @@ public class SettingDataActivity extends FragmentActivity implements DatePickerD
     @Override
     public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
         Toast.makeText(SettingDataActivity.this, "new time:" + hourOfDay + "-" + minute, Toast.LENGTH_LONG).show();
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    public void startLocationService() {
+        gpsListener = new GPSListener();
+        manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        long minTime = 100000;
+        float minDistance = 0;
+
+        if (manager != null) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                    && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            }
+        }
+
+        manager.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER,
+                minTime,
+                minDistance,
+                gpsListener);
+
+        manager.requestLocationUpdates(
+                LocationManager.NETWORK_PROVIDER,
+                minTime,
+                minDistance,
+                gpsListener);
+    }
+
+    private class GPSListener implements LocationListener {
+        public void onLocationChanged(Location location) {
+            Double latitude = location.getLatitude();
+            Double longitude = location.getLongitude();
+
+            showCurrentLocation(latitude, longitude);
+        }
+
+        public void onProviderDisabled(String provider) {
+        }
+
+        public void onProviderEnabled(String provider) {
+        }
+
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+        }
+    }
+
+    private void showCurrentLocation(Double latitude, Double longitude) {
+        LatLng curPoint = new LatLng(latitude, longitude);
+        this.latitude = latitude;
+        this.longitude = longitude;
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(curPoint, 15));
+        map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        map.addMarker(new MarkerOptions().position(curPoint));
+
+        if (manager != null) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                    && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            }
+        }
+        manager.removeUpdates(gpsListener);
     }
 }
