@@ -30,20 +30,22 @@
         android:clipToPadding="false"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="0dp"
         android:scrollbarStyle="outsideOverlay"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:background="#b2bdc9"
+        android:padding="10dp">
 
         <FrameLayout
             android:layout_width="fill_parent"
             android:layout_height="280dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:onClick="onDynamicListViewClicked"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
             android:layout_gravity="top|left"
-            android:padding="5dp">
+            android:padding="0dp"
+            android:background="#fff">
 
             <FrameLayout
                 android:layout_width="fill_parent"
@@ -54,7 +56,7 @@
 
                 <fragment
                     android:id="@+id/map"
-                    android:layout_width="370dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="match_parent"
                     class="com.google.android.gms.maps.SupportMapFragment"
                     android:layout_gravity="center_horizontal|top"
@@ -78,23 +80,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|bottom"
-                android:text="current location"
+                android:text="Current location"
                 android:textColor="#405B79"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
-                android:typeface="serif"
                 android:layout_marginTop="5dp"
-                android:layout_margin="5dp" />
+                android:layout_margin="15dp" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView9"
-                android:layout_gravity="center_horizontal|bottom"
-                android:background="@drawable/line" />
+                android:background="@drawable/line"
+                android:layout_gravity="center_horizontal|bottom" />
 
         </FrameLayout>
 
@@ -108,11 +109,10 @@
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="600dp"
-                android:background="#fff"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:layout_weight="17.50"
                 android:layout_gravity="center_horizontal|bottom"
-                android:padding="5dp">
+                android:padding="1dp">
 
                 <com.fenjuly.mylibrary.ToggleExpandLayout
                     android:id="@+id/toogleLayout"
@@ -144,8 +144,7 @@
                                 android:layout_marginLeft="8dp"
                                 android:text="Set date"
                                 android:textSize="18dp"
-                                android:textColor="#405B79"
-                                android:typeface="serif" />
+                                android:textColor="#405B79" />
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -160,12 +159,13 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageView2"
+                                android:id="@+id/imageView7"
                                 android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
                                 android:layout_alignParentBottom="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentEnd="true"
-                                android:focusable="false" />
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
                         </RelativeLayout>
 
                     </LinearLayout>
@@ -193,8 +193,7 @@
                                 android:layout_marginLeft="8dp"
                                 android:text="Set time"
                                 android:textColor="#405B79"
-                                android:textSize="18dp"
-                                android:typeface="serif" />
+                                android:textSize="18dp" />
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -207,11 +206,13 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/imageView10"
                                 android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
                                 android:layout_alignParentBottom="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentEnd="true"
-                                android:id="@+id/ImageView3" />
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
                         </RelativeLayout>
 
                     </LinearLayout>
@@ -236,8 +237,7 @@
                                 android:layout_marginLeft="8dp"
                                 android:text="Select date and time"
                                 android:textColor="#405B79"
-                                android:textSize="18dp"
-                                android:typeface="serif" />
+                                android:textSize="18dp" />
                             <TextView
                                 android:layout_below="@+id/menu"
                                 android:layout_marginTop="4dp"
@@ -246,7 +246,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Select your wanting Time or Date "
                                 android:textColor="#cccccc"
-                                android:typeface="serif" />
+                                android:id="@+id/textView2" />
                             <com.kyleduo.switchbutton.SwitchButton
                                 android:id="@+id/switch_button"
                                 android:layout_alignParentRight="true"
@@ -260,28 +260,11 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/imageView4"
                                 android:background="@drawable/line"
-                                android:layout_alignParentBottom="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentEnd="true" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/imageView10"
-                                android:background="@drawable/line"
-                                android:layout_alignParentTop="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentEnd="true" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/imageView7"
-                                android:background="@drawable/line"
                                 android:focusableInTouchMode="false"
-                                android:layout_above="@+id/imageView4"
+                                android:layout_alignParentBottom="true"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true" />
+
                         </RelativeLayout>
                     </LinearLayout>
                 </com.fenjuly.mylibrary.ToggleExpandLayout>
@@ -318,8 +301,7 @@
                                 android:layout_marginLeft="8dp"
                                 android:text="Set wifi"
                                 android:textSize="18dp"
-                                android:textColor="#405B79"
-                                android:typeface="serif" />
+                                android:textColor="#405B79" />
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -334,11 +316,13 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageView5"
+                                android:id="@+id/imageView6"
                                 android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
                                 android:layout_alignParentBottom="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentEnd="true" />
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
                         </RelativeLayout>
 
                     </LinearLayout>
@@ -365,8 +349,7 @@
                                 android:layout_marginLeft="8dp"
                                 android:text="Set vibrate"
                                 android:textColor="#405B79"
-                                android:textSize="18dp"
-                                android:typeface="serif" />
+                                android:textSize="18dp" />
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -379,11 +362,13 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageView6"
+                                android:id="@+id/imageView5"
                                 android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
                                 android:layout_alignParentBottom="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentEnd="true" />
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
                         </RelativeLayout>
 
                     </LinearLayout>
@@ -410,8 +395,7 @@
                                 android:layout_marginLeft="8dp"
                                 android:text="Set bluetooth"
                                 android:textColor="#405B79"
-                                android:textSize="18dp"
-                                android:typeface="serif" />
+                                android:textSize="18dp" />
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -424,11 +408,13 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageView8"
+                                android:id="@+id/imageView12"
                                 android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
                                 android:layout_alignParentBottom="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentEnd="true" />
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
                         </RelativeLayout>
 
                     </LinearLayout>
@@ -453,8 +439,7 @@
                                 android:layout_marginLeft="8dp"
                                 android:text="Select statement"
                                 android:textColor="#405B79"
-                                android:textSize="18dp"
-                                android:typeface="serif" />
+                                android:textSize="18dp" />
                             <TextView
                                 android:layout_below="@+id/menu2"
                                 android:layout_marginTop="4dp"
@@ -462,8 +447,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Choose statement"
-                                android:textColor="#cccccc"
-                                android:typeface="serif" />
+                                android:textColor="#cccccc" />
                             <com.kyleduo.switchbutton.SwitchButton
                                 android:id="@+id/switch_button2"
                                 android:layout_alignParentRight="true"

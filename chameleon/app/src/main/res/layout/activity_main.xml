@@ -5,7 +5,7 @@
     android:scrollbars="none"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scroll_view"
-    android:background="#fff">
+    android:background="#b2bdc9">
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -13,20 +13,23 @@
     android:layout_height="550dp"
     android:layout_marginBottom="5dp"
 
-    android:padding="5dp"
-    android:background="#405B79">
+    android:background="#b2bdc9"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="600dp"
         android:id="@+id/showModeListView"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/shape"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
     </ListView>
 
    <!-- <Button
