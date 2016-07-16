@@ -1,2 +1,2 @@
 # Chameleon
-Time and Location-based smartphone automatic mode change manager.
+Time and location-based Smartphone mode manager.
