@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2014 Niek Haarman
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    tools:ignore="UnusedAttribute"
+    android:background="#fff"
+    android:fillViewport="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:scrollbarStyle="outsideOverlay"
+        android:weightSum="1"
+        android:background="#b2bdc9"
+        android:padding="10dp">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="280dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="onDynamicListViewClicked"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_gravity="top|left"
+            android:padding="0dp"
+            android:background="#fff">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="220dp"
+                android:padding="0dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_margin="0dp">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    class="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_gravity="center_horizontal|top"
+                    android:layout_marginTop="0dp"
+                    android:layout_margin="0dp" />
+
+            </FrameLayout>
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:id="@+id/current_location__button"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:padding="15dp"
+                android:layout_gravity="right|bottom"
+                android:paddingBottom="16dp"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|bottom"
+                android:text="Current location"
+                android:textColor="#405B79"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_margin="15dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView9"
+                android:background="@drawable/line"
+                android:layout_gravity="center_horizontal|bottom" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="600dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_weight="17.50"
+                android:layout_gravity="center_horizontal|bottom"
+                android:padding="1dp">
+
+                <com.fenjuly.mylibrary.ToggleExpandLayout
+                    android:id="@+id/toogleLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="240dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+
+                    <LinearLayout
+                        android:id="@+id/id2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:background="#ffffff"
+                        android:elevation="2dp"
+                        android:outlineProvider="bounds"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/dateList"
+                            android:onClick="selectDate"
+                            android:clickable="true">
+                            <TextView
+                                android:id="@+id/first_menu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="8dp"
+                                android:text="Set date"
+                                android:textSize="18dp"
+                                android:textColor="#405B79" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/next"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentLeft="false"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="20dp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView7"
+                                android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:background="#ffffff"
+                        android:elevation="3dp"
+                        android:outlineProvider="bounds"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/timeList"
+                            android:nestedScrollingEnabled="false"
+                            android:onClick="selectTime"
+                            android:clickable="true">
+                            <TextView
+                                android:id="@+id/second_menu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:text="Set time"
+                                android:textColor="#405B79"
+                                android:textSize="18dp" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/next"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="10dp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView10"
+                                android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:background="#ffffff"
+                        android:elevation="4dp"
+                        android:outlineProvider="bounds"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+                            <TextView
+                                android:id="@+id/menu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:text="Select date and time"
+                                android:textColor="#405B79"
+                                android:textSize="18dp" />
+                            <TextView
+                                android:layout_below="@+id/menu"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Select your wanting Time or Date "
+                                android:textColor="#cccccc"
+                                android:id="@+id/textView2" />
+                            <com.kyleduo.switchbutton.SwitchButton
+                                android:id="@+id/switch_button"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="15dp"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView4"
+                                android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </com.fenjuly.mylibrary.ToggleExpandLayout>
+
+                <com.fenjuly.mylibrary.ToggleExpandLayout
+                    android:id="@+id/toogleLayout2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="360dp"
+                    android:paddingTop="0dp"
+                    android:padding="0dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="40dp">
+
+                    <LinearLayout
+                        android:id="@+id/id5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:background="#ffffff"
+                        android:elevation="2dp"
+                        android:outlineProvider="bounds"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/wifiList"
+                            android:onClick="selectDate"
+                            android:clickable="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="8dp"
+                                android:text="Set wifi"
+                                android:textSize="18dp"
+                                android:textColor="#405B79" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/next"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentLeft="false"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="20dp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView6"
+                                android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id6"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:background="#ffffff"
+                        android:elevation="3dp"
+                        android:outlineProvider="bounds"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/vibrateList"
+                            android:nestedScrollingEnabled="false"
+                            android:clickable="true">
+                            <TextView
+                                android:id="@+id/second_menu2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:text="Set vibrate"
+                                android:textColor="#405B79"
+                                android:textSize="18dp" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/next"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="10dp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView5"
+                                android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/id8"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:background="#ffffff"
+                        android:elevation="3dp"
+                        android:outlineProvider="bounds"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/bluetoothList"
+                            android:nestedScrollingEnabled="false"
+                            android:clickable="true">
+                            <TextView
+                                android:id="@+id/second_menu3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:text="Set bluetooth"
+                                android:textColor="#405B79"
+                                android:textSize="18dp" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/next"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="10dp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView12"
+                                android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/id7"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:background="#ffffff"
+                        android:elevation="4dp"
+                        android:outlineProvider="bounds">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            >
+                            <TextView
+                                android:id="@+id/menu2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:text="Select statement"
+                                android:textColor="#405B79"
+                                android:textSize="18dp" />
+                            <TextView
+                                android:layout_below="@+id/menu2"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Choose statement"
+                                android:textColor="#cccccc" />
+                            <com.kyleduo.switchbutton.SwitchButton
+                                android:id="@+id/switch_button2"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="15dp"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView11"
+                                android:background="@drawable/line"
+                                android:focusableInTouchMode="false"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </com.fenjuly.mylibrary.ToggleExpandLayout>
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <!--<FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginBottom="4dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="onExpandListItemAdapterClicked">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="vibrate"
+                    android:layout_marginBottom="30dp"
+                    android:id="@+id/checkBoxVibrate"
+                    android:checked="true"/>
+
+                <Button
+                    android:id="@+id/timeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Time"
+                    android:theme="@style/MyButton"
+                    android:layout_gravity="left|bottom" />
+
+                <Button
+                    android:id="@+id/dateButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Date"
+                    android:theme="@style/MyButton"
+                    android:layout_gravity="left|center_vertical" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="close on single tap minute"
+                    android:layout_marginBottom="30dp"
+                    android:id="@+id/checkBoxCloseOnSingleTapMinute"
+                    android:checked="true"
+                    android:layout_gravity="right|bottom" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="close on single tap day"
+                    android:layout_marginBottom="30dp"
+                    android:id="@+id/checkBoxCloseOnSingleTapDay"
+                    android:checked="true"
+                    android:layout_gravity="right|center_vertical" />
+
+            </FrameLayout>
+        </FrameLayout>-->
+    </LinearLayout>
+</ScrollView>

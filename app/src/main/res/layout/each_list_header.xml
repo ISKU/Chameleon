@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#667b93"
+    android:padding="0dp">
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minHeight="48dp"
+    android:padding="0dp"
+    android:textSize="21sp"
+    android:radius="11dp"
+    android:text="SAVE LIST"
+    tools:ignore="UnusedAttribute"
+    android:gravity="center_vertical"
+    android:layout_marginLeft="10dp"
+    android:id="@+id/textView"
+    android:textColor="#F5F5F5"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/listToSettingButton"
+        android:onClick="moveListSetting"
+        android:background="@drawable/list_plus_selector"
+        android:gravity="center_vertical|right"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+    </Button>
+</RelativeLayout>
