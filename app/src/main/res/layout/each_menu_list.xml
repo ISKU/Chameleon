@@ -1,145 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/shape"
-    android:layout_gravity="center"
-    android:layout_height="match_parent"
-    android:paddingTop="0dp">
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="6dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginBottom="0dp">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#ffffff"
-        android:layout_marginTop="10dp"
-        >
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="horizontal" android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|center_horizontal"
-            android:paddingTop="0dp"
-            android:layout_marginTop="0dp"
-            android:id="@+id/linearLayout2">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="25dp">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:layout_weight="95"
                 android:textSize="20dp"
                 android:id="@+id/listName"
                 android:textColor = "#405B79"
+                android:layout_gravity="left"
                 android:text="이름" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="vertical" android:layout_width="77dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="0dp"
-
-                android:gravity="top">
-
-            </LinearLayout>
-
             <com.kyleduo.switchbutton.SwitchButton
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
                 android:textOn=""
                 android:textOff=""
-                android:layout_height="wrap_content"
-                android:id="@+id/toggle_save"/>
-
-
+                android:id="@+id/toggle_save"
+                android:layout_marginLeft="10dp"
+                android:checked="false" />
         </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="2dp">
 
-        <!-- 기능 -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
             android:text="12시 30분 / 금"
-            android:textColor = "#405B79"
+            android:textColor="#405B79"
+            android:layout_gravity="left"
             android:id="@+id/startName"
-            android:gravity="top"
-            android:layout_below="@+id/linearLayout2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="20dp" />
+            android:layout_weight="5"/>
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12dp"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
             android:text=" ~ 15시 30분"
-            android:textColor = "#405B79"
+            android:textColor="#405B79"
+            android:layout_gravity="left"
             android:id="@+id/stopName"
-            android:layout_gravity="center_horizontal"
-            android:layout_alignTop="@+id/startName"
-            android:layout_toRightOf="@+id/startName"
-            android:layout_toEndOf="@+id/startName" />
+            android:layout_weight="5"/>
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="horizontal" android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/linearLayout">
-            <TextView
-                android:layout_width="5dp"
-                android:layout_height="25dp"
-                android:id="@+id/function"
-                />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="90"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="5dp">
+
             <ImageView
                 android:layout_width="25dp"
                 android:layout_weight=".15"
-                android:layout_height="25dp"
+                android:layout_height="match_parent"
                 android:id="@+id/wifi_function"
                 android:src="@drawable/wifi_function_off"
                 android:contentDescription="" />
+
             <ImageView
                 android:layout_width="25dp"
                 android:layout_weight=".15"
-                android:layout_height="25dp"
+                android:layout_height="match_parent"
                 android:id="@+id/sound_function"
                 android:src="@drawable/sound_function_off"
                 android:contentDescription="" />
+
             <ImageView
                 android:layout_width="25dp"
                 android:layout_weight=".15"
-                android:layout_height="25dp"
+                android:layout_height="match_parent"
                 android:id="@+id/network_function"
                 android:src="@drawable/network_function_off"
                 android:contentDescription="" />
+
             <ImageView
                 android:layout_width="25dp"
                 android:layout_weight=".15"
-                android:layout_height="25dp"
+                android:layout_height="match_parent"
                 android:id="@+id/bright_function"
                 android:src="@drawable/bright_function_off"
                 android:contentDescription="" />
+
             <ImageView
                 android:layout_width="25dp"
                 android:layout_weight=".15"
-                android:layout_height="25dp"
+                android:layout_height="match_parent"
                 android:id="@+id/bluetooth_function"
                 android:src="@drawable/bluetooth_function_off"
                 android:contentDescription="" />
+
             <ImageView
                 android:layout_width="25dp"
                 android:layout_weight=".15"
-                android:layout_height="25dp"
+                android:layout_height="match_parent"
                 android:id="@+id/airplane_function"
                 android:src="@drawable/airplane_function_off"
                 android:contentDescription="" />
         </LinearLayout>
 
-    </RelativeLayout>
-
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
+        android:layout_marginTop="15dp"
         android:background="@drawable/line" />
-
 </LinearLayout>
