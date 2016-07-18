@@ -15,6 +15,7 @@ import android.widget.ScrollView;
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
+
     Button toSaveListButton;
     Button toModeListButton;
     Intent aIntent;
@@ -35,14 +36,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        startActivity(new Intent(this,SplashActivity.class));
+        startActivity(new Intent(this,SplashActivity.class));   // Splash
         setContentView(R.layout.activity_main);
 
-
-
-
         save_menu = new ArrayList<Info>();
-        scrollView = (ScrollView) findViewById(R.id.scroll_view);
+        //scrollView = (ScrollView) findViewById(R.id.scroll_view);
         listView = (ListView) findViewById(R.id.showModeListView);
         save_menu.add(new Info(1, "서영학 김민호", 1, 34444, 77777, 1, 0, 1, 1, 1, 1, 1234, 123, 1));
         save_menu.add(new Info(1, "공대 5호관", 1, 33244, 77777, 1, 1, 0, 1, 1, 1, 1234, 123, 1));
@@ -50,12 +48,10 @@ public class MainActivity extends Activity {
         save_menu.add(new Info(1, "서영학 김민호", 1, 44444, 77722, 1, 0, 1, 1, 1, 1, 1234, 123, 1));
         save_menu.add(new Info(1, "서영학 김민호", 1, 22, 44777, 1, 0, 1, 1, 1, 1, 1234, 123, 1));
 
-//public Info(int id, String name, int week, int starttime, int stoptime, int wifi, int sound, int brightness, int lte, int bluetooth, int airplane, double latitude, double longitude, int toggle) {
-
         listView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                scrollView.requestDisallowInterceptTouchEvent(true);
+                //scrollView.requestDisallowInterceptTouchEvent(true);
                 return false;
             }
         });
@@ -63,63 +59,37 @@ public class MainActivity extends Activity {
         listView.addHeaderView(header);
         myAdapter adapter = new myAdapter();
         listView.setAdapter(adapter);
-
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//                intent.putExtra("position_save", position);
-//                startActivity(intent);
-//            }
-//        });
-
-
-        /*
-       toModeListButton = (Button) findViewById(R.id.listToSettingButton);
-        toModeListButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                aIntent = new Intent(MainActivity.this, ModeActivity.class);
-                startActivity(aIntent);
-            }
-        });
-        */
-
     }
 
-
-
     private class myAdapter extends BaseAdapter {
-
         @Override
         public int getCount() {
             return save_menu.size();
         }
+
         @Override
         public Object getItem(int position) {
             return save_menu.get(position);
         }
+
         @Override
         public long getItemId(int position) {
             return position;
         }
+
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             EachSaveListView view = new EachSaveListView(getApplicationContext());
             view.setListNameText(save_menu.get(position).getName());
-
             view.setStartNameText(save_menu.get(position).getStarttime() + "",weekList[save_menu.get(position).getWeek()]);
             view.setStopNameText(save_menu.get(position).getStoptime() + "");
-
             view.setBrightFunction(save_menu.get(position).getBrightness());
             view.setWifiFunction(save_menu.get(position).getWifi());
             view.setBluetoothFunction(save_menu.get(position).getBluetooth());
             view.setNetworkFunction(save_menu.get(position).getLte());
             view.setAirplaneFunction(save_menu.get(position).getAirplane());
             view.setSoundFunction(save_menu.get(position).getSound());
-
             return view;
-            //  public Info(int id, String name, int sound, int brightness, int wifi, int lte, int bluetooth, int airplane, String week, double latitude, double longitude, long starttime, long stoptime, int toggle) {
-
         }
     }
 
@@ -129,5 +99,4 @@ public class MainActivity extends Activity {
             startActivity(intent_setListWindow);
         }
     }
-
 }
