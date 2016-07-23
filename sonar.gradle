@@ -158,7 +158,7 @@ FileCollection generateClassDirs(Collection projects) {
                 dir: "${prj.name}/build/intermediates/classes/debug",
                 excludes: [
                         '**/R*.class',
-                        '**/BuildConfig*',
+                       // '**/BuildConfig*',
                         '**/Lambda$*.class',
                         '**/Lambda.class',
                         '**/*Lambda.class',
