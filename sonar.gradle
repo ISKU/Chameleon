@@ -16,31 +16,16 @@ def jacocoVersion = "0.7.4.201502262128"
 // ****************************** modify this maps for your project ***************************************
 // ********************************************************************************************************
 
-def projectFlavorMap = ['app' : 'debug',
-                        'module1' : 'debug',
-                        'module2' : 'debug',
-                        'module3' : '-' // this is not android project, but simple java project
-                        ]
+def projectFlavorMap = ['app' : 'debug']
 
-def projectJacocoReportPath = [ 'app' : 'build/jacoco/testDebugUnitTest.exec',
-                                'module1' : 'build/jacoco/testDebugUnitTest.exec',
-                                'module2' : 'build/jacoco/testDebugUnitTest.exec',
-                                'module3' : 'build/jacoco/test.exec']
+def projectJacocoReportPath = [ 'app' : 'build/jacoco/testDebugUnitTest.exec']
 
-def projectJunitReportPath = [  'app' : 'build/test-results/debug',
-                                'module1' : 'build/test-results/debug',
-                                'module2' : 'build/test-results/debug',
-                                'module3' : 'build/test-results']
+def projectJunitReportPath = [  'app' : 'build/test-results/debug']
 
-def projectJavaBinaries = [    'app' : 'build/intermediates/classes/debug',
-                               'module1' : 'build/intermediates/classes/debug',
-                               'module2' : 'build/intermediates/classes/debug',
-                               'module3' : 'build/classes']
+def projectJavaBinaries = [    'app' : 'build/intermediates/classes/debug']
 
-def projectJacocoReportTaskDependsOn = [    'app' : 'testDebugUnitTest',
-                                            'module1' : 'testDebugUnitTest',
-                                            'module2' : 'testDebugUnitTest',
-                                            'module3' : 'test']
+def projectJacocoReportTaskDependsOn = [    'app' : 'testDebugUnitTest']
+
 // ********************************************************************************************************
 
 subprojects { prj ->
