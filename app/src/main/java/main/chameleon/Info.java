@@ -19,6 +19,10 @@ public class Info {
     private double longitude;
     private int toggle;
 
+    public Info() {
+        //
+    }
+
     public Info(int id, String name, int week, int starttime, int stoptime, int wifi, int sound, int brightness, int lte, int bluetooth, int airplane, double latitude, double longitude, int toggle) {
         this.id = id;
         this.name = name;
@@ -135,4 +139,6 @@ public class Info {
     public String toString() {
         return String.format("%s", name);
     }
+
+    public int testInt() { return 100; }
 }

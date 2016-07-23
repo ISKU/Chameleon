@@ -1,12 +1,17 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "sonar.gradle"
+apply plugin: 'jacoco'
 
 buildscript {
     repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.1.2'
-
+        // classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:1.2"
+		classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.0.1"
+		
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
