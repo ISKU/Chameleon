@@ -1,9 +1,10 @@
 package main.chameleon;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.SmallTest;
-import org.junit.Before;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -15,6 +16,8 @@ import static org.junit.Assert.assertThat;
 public class TestSample {
     @Test
     public void test() {
-        assertThat(25,is(25));
+        Info info = new Info();
+        assertThat(25, is(25));
+        assertThat(100, is(info.testInt()));
     }
 }
