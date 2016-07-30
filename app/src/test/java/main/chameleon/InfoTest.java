@@ -9,7 +9,7 @@ public class InfoTest {
     @Test
     public void testInfo() {
         Info info = new Info();
-        Info testinfo = new Info(1, "a", 1 , 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+        Info testinfo = new Info(1, "a", 1 , 1, 1, 1, 1, 1, 1, 1, 1, 1.0, 1.0, 1);
 
         assertEquals(4, 2 + 2);
         assertEquals(100, info.testInt());
