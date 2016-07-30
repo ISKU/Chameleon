@@ -9,6 +9,13 @@ public class InfoTest {
     @Test
     public void testInfo() {
         assertEquals(4, 2 + 2);
-        assertThat(100, is(info.testInt()));
+        assertEquals(100, Info.testInt());
+        assertEquals(100, Info.testInt());
+        assertEquals(100, Info.testInt());
+        assertEquals(100, Info.testInt());
+        assertEquals(100, Info.testInt());
+        assertEquals(100, Info.testInt());
+        assertEquals(100, Info.testInt());
+        assertEquals(100, Info.testInt());
     }
 }
