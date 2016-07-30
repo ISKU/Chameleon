@@ -48,10 +48,10 @@ public class InfoTest {
         assertEquals(1, info.getAirplane());
 
         info.setLatitude(1.0);
-        assertEquals(1.0, info.getLatitude());
+        assertEquals(1.0, info.getLatitude(), 0.00001);
 
         info.setLongitude(1.0);
-        assertEquals(1.0, info.getLongitude());
+        assertEquals(1.0, info.getLongitude(), 0.00001);
 
         info.setToggle(1);
         assertEquals(1, info.getToggle());
