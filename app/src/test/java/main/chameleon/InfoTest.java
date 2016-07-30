@@ -11,10 +11,8 @@ public class InfoTest {
         Info info = new Info();
         assertEquals(4, 2 + 2);
         assertEquals(100, info.testInt());
-        assertEquals(100, info.testInt());
-        assertEquals(100, info.testInt());
-        assertEquals(100, info.testInt());
-        assertEquals(100, info.testInt());
-        assertEquals(100, info.testInt());
+
+        info.setToggle(1);
+        assertEquals(1, info.getToggle());
     }
 }
