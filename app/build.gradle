@@ -51,3 +51,33 @@ dependencies {
     androidTestCompile 'com.android.support.test:rules:0.4.1'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
 }
+
+apply plugin: 'jacoco'
+
+jacoco {
+    reportsDir = file("${buildDir}/reports")
+}
+
+task coverageReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports"
+
+    def coverageSourceDirs = ['src/main/java']
+
+    classDirectories = fileTree(
+            dir: "${buildDir}/intermediates/classes/debug",
+            excludes: ['**/R.class',
+                       '**/R$*.class',
+                       '**/BuildConfig.*',
+                       '**/Manifest*.*',
+                       'com/android/**/*.class']
+    )
+
+    sourceDirectories = files(coverageSourceDirs)
+    executionData = files("${buildDir}/jacoco/testDebugUnitTest.exec")
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
