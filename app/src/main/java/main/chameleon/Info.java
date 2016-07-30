@@ -107,7 +107,7 @@ public class Info {
         return bluetooth;
     }
     public void setBluetooth(int bluetooth) {
-        this.sound = bluetooth;
+        this.bluetooth = bluetooth;
     }
 
     public int getAirplane() {
