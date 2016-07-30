@@ -8,14 +8,13 @@ public class InfoTest {
 
     @Test
     public void testInfo() {
+        Info info = new Info();
         assertEquals(4, 2 + 2);
-        assertEquals(100, Info.testInt());
-        assertEquals(100, Info.testInt());
-        assertEquals(100, Info.testInt());
-        assertEquals(100, Info.testInt());
-        assertEquals(100, Info.testInt());
-        assertEquals(100, Info.testInt());
-        assertEquals(100, Info.testInt());
-        assertEquals(100, Info.testInt());
+        assertEquals(100, info.testInt());
+        assertEquals(100, info.testInt());
+        assertEquals(100, info.testInt());
+        assertEquals(100, info.testInt());
+        assertEquals(100, info.testInt());
+        assertEquals(100, info.testInt());
     }
 }
