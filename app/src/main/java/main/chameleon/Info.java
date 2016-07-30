@@ -140,5 +140,5 @@ public class Info {
         return String.format("%s", name);
     }
 
-    public int testInt() { return 100; }
+    static public int testInt() { return 100; }
 }
